@@ -9,4 +9,4 @@ source ~/.bashrc
 
 FILE=$(head -n $SGE_TASK_ID meta.txt | tail -n 1)
 
-~/miniconda2/bin/python ~/biobakery-metaphlan2-40d1bf693089/biobakery-metaphlan2-v1/metaphlan2.py $FILE  --input_type fastq > {FILE%.fastq}.metaphlan_profile.txt
+~/miniconda2/bin/python ~/biobakery-metaphlan2-40d1bf693089/biobakery-metaphlan2-v1/metaphlan2.py $FILE  --input_type fastq > ${FILE%.fastq}.metaphlan_profile.txt
