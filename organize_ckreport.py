@@ -16,7 +16,7 @@ inputfile= str(args.input)
 outputfile=str(args.output)
 
 #----open ouputfile------
-o=open(outputfile, 'w')
+o=open(outputfile+ '.txt', 'w')
 o.write('Genus_species'+'\t'+'Genus_species_strain'+'\t'+'Total'+'\n')
 
 #---start analysis------
