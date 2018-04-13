@@ -14,6 +14,11 @@ args = parser.parse_args()
 inputfile= str(args.input)
 outputfile=str(args.output)
 
+#----open ouputfile------
+o=open(outputfile, 'w')
+o.write('Genus_species'+'\t'+'Genus_species_strain'+'\t'+'Total'+'\n')
+
+#---start analysis------
 with open(inputfile,'r+') as f:
     for line in f:
         if line.split()[3]=='S' and len(line.split())==7:
@@ -28,7 +33,6 @@ with open(inputfile,'r+') as f:
                 strain=''.join(mvx[-1:])
                 total=float(line[0])+float(mvx[0])
                 o.write(bac_spec+'\t'+bac_spec+" " +str(strain)+'\t'+str(total)+'\n')
-
             else:pass
         
 o.close()
