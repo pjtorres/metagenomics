@@ -14,24 +14,22 @@ args = parser.parse_args()
 inputfile= str(args.input)
 outputfile=str(args.output)
 
+with open(inputfile,'r+') as f:
+    for line in f:
+        if line.split()[3]=='S' and len(line.split())==7:
+            x= ''.join(islice(f,1))
+            x= x.split()
+            c=0
+            if x[3]=='-':
+                mvx= '\t'.join(x)
+                mvx=mvx.split()
+                line = line.split() 
+                bac_spec=' '.join(line[-2:])
+                strain=''.join(mvx[-1:])
+                total=float(line[0])+float(mvx[0])
+                o.write(bac_spec+'\t'+bac_spec+" " +str(strain)+'\t'+str(total)+'\n')
 
-fin=open(inputfile,'r+')
-o=open(outputfile+'.txt', 'w')
-tax={}
-o.write('Genus_species'+'\t'+'Genus_species_strain'+'\t'+'Total'+'\n')
-for line in fin:
-    if line.split()[3]=='S' and len(line.split())==7 and next(fin).split()[3]=='-':
-        if next(fin).split()[3]=='-':
-            y= line.split()
-            x= next(fin).split()
-            taxname=y[-2:]
-            species=x[-3:]
-            total=float(y[0])+float(x[0])
-            taxnamef= ' '.join(taxname)
-            specnamef= ' '.join(species)   
-            o.write(taxnamef + '\t'+ specnamef+'\t'+str(total)+'\n')
-            
+            else:pass
+        
 o.close()
-fin.close()
-
 print ('Done :)')
