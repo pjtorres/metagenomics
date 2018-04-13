@@ -3,6 +3,7 @@ __author__ = 'Pedro J. Torres'
 import os
 import sys, getopt
 import argparse
+from itertools import islice
 
 '''This script takes the output file from rmv_0_creport.py and organizes it to only show bacterial genus, species, strain and abudnance'''
 
