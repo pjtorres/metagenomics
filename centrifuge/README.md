@@ -37,10 +37,6 @@ sudo docker run -v `pwd`:`pwd` -w `pwd` cfuge centrifuge-kreport \
   centri_o/file_centrifuge_class.tsv > centri_o/file_centrifuge_class_kreport.tsv
 ```
 
-# Running Docker for python
-```bash
-docker build -t analysis metagenomics/centrifuge/python/
-```
 # running kraken2mpa to centrifuge in metaphlan format
 ```bash
 sudo docker run -v `pwd`:`pwd` -w `pwd` cfuge python metagenomics_pipeline/centrifuge/kraken2mpa2.py \ 
