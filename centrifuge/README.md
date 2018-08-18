@@ -1,5 +1,8 @@
 # Scripts for analyzing and formating centrifuge data for microbial metagenomics
 
+# Clone repository
+```git clone https://github.com/pjtorres/metagenomics.git```
+
 # Build Docker Image for Centrifuge
 ```bash
 sudo docker build -t cfuge metagenomics/centrifuge/
